@@ -1,244 +1,201 @@
-/* CSS Reset */
-*{
-    margin:0;
-    padding:0;
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo Bhaijaan 2', cursive;
 }
-/* CSS Variables*/
-:root{
-    --navbar-height: 59px;
+
+html {
+    scroll-behavior: smooth;
 }
-/* Navigation Bar*/
-#navbar{
+
+body {
+    background-color: #fffbea;
+    color: #333;
+}
+
+/* Navbar styles */
+#navbar {
     display: flex;
     align-items: center;
-    position: relative;
-    top: 0px;
-}
-#navbar::before{
-    content:" ";
-    background-color: black;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 65%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.4;
-}
-/*Navigation bar: Logo and Image*/
-#logo{
-    margin: 3px -3px;
-   
-}
-#logo img{
-    height: 63px;
-    margin: -4px 35px;
-    
+    justify-content: space-between;
+    background-color: #ff6f61;
+    padding: 10px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-#navbar ul{
-    display: flex;
-    font-family: "Baloo Bhaijaan2",cursive;
+#logo img {
+    height: 40px;
 }
 
-#navbar ul li{
+#navbar ul {
     list-style: none;
-    font-size: 1.3rem;
+    display: flex;
 }
-#navbar ul li a{
-    color: white;
-    display: block;
-    padding: 3px 22px;
-    border-radius: 20px;
+
+#navbar ul li {
+    margin: 0 15px;
+}
+
+#navbar ul li a {
     text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
 }
-#navbar ul li a:hover{
-    color: black;
-    background-color: white;
-   
+
+#navbar ul li a:hover {
+    color: #000;
 }
-/*Home Section*/
-#home{
+
+/* Home section */
+#home {
     display: flex;
     flex-direction: column;
-    padding:3px 200px;
-    height: 454px;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-}
-#home::before{
-    content:" ";
-    background: url('../bg2.jpg') no-repeat center center/cover;
-    position: absolute;
-    height: 65%;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.89;
-}
-#home h1{
+    justify-content: center;
+    height: 90vh;
+    background: url('images/bg.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
-    font-family: "Bree Serif",serif;
+    padding: 20px;
 }
-#home p{
+
+.h-primary {
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+.h-secondary {
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    border: none;
     color: white;
-    text-align: center;
-    font-size: 1.5rem;
-    font-family: "Bree Serif",serif;
-}
-/*Services Section*/
-#services .box:nth-child(1), #services .box:nth-child(3) {
-    margin-left: 35px;  /* Half of the gap between boxes */
-    margin-right: 35px; /* Half of the gap between boxes */
-}
-#services {
-    display: flex;
-    flex-wrap: wrap; /* Ensures boxes wrap in a responsive manner */
-    justify-content: space-between; /* Distribute space between boxes */
-    gap: -8px; /* Reduced space between boxes */
-    margin-bottom: 60px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
     margin-top: 15px;
 }
 
-#services .box {
-    border: 2px solid brown;
+.btn:hover {
+    background-color: #e05a4f;
+}
+
+/* Services section */
+#services-container {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+#services {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-color: #ffe5d9;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 28px;
-    background: #f2f2f2;
-    width: calc(30% - 10px); /* Slightly reduce width to fit boxes closer */
-    box-sizing: border-box; /* Ensures padding and borders don't affect the width */
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column; /* Stack the content vertically */
-    justify-content: space-between; /* Ensure content is spaced evenly */
-    height: 5in; /* Fixed height of 5 inches for each box */
-    overflow: hidden; /* Prevent content from overflowing */
-}
-
-#services .box img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px; /* Reduced margin to make content more compact */
-}
-
-#services .box h2, #services .box p {
-    text-align: center; /* Center the heading and text */
-    margin: 5px 0; /* Reduced spacing between text and image */
-}
-
-#services .box:hover {
-    transform: scale(1.05); /* Slightly enlarge the box on hover */
-}
-
-/* Media Queries for Responsiveness */
-@media screen and (max-width: 768px) {
-    #services .box {
-        width: calc(45% - 10px); /* 2 boxes per row on medium screens */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #services .box {
-        width: 100%; /* Single box per row on small screens */
-    }
-
-    #home {
-        padding: 3px 20px; /* Less padding for smaller screens */
-    }
-}
-/*Client Section*/
-
-#client-section{
-    position: relative;
-    height: 344px;
-    margin-bottom: 40px;
-
-}
-#client-section::before{
-    content: " ";
-    position: absolute;
-    background: url('../backgrnd.jpg')no-repeat center center/cover;
-    width:100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.3;
-}
-#clients{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.client-item{
-    padding: 34px; ;
-}
-#clients img{
-    height: 144px;
-}
-/*Contact Section*/
-#contact{
-    position: relative;
-}
-#contact::before{
-    content: " ";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.7;
-    background: url(../contact.jpg)no-repeat center center/cover;
-    
-}
-#contact-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 34px;
-}
-#contact-box input,
-#contact-box textarea{
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 9px;
-    font-size: 1.1rem;
-}
-#contact-box form{
-    width: 40%;
-}
-#contact-box label{
-    font-size: 1.3rem;
-    font-family: "Bree Serif",serif;
-}
-footer{
-    background: black;
-    color: white;
-    padding: 9px 20px;
-}
-
-/* Utility Classes*/
-.h-primary{
-    font-family: "Bree Serif",serif;
-    font-size: 3.8rem;
-    padding: 12px;
-}
-.h-secondary{
-    font-family: "Bree Serif",serif;
-    font-size: 2.3rem;
-    padding: 12px;
-}
-.btn{
-    padding: 6px 20px;
-    border: 2px solid white;
-    background-color: brown;
-    color: white;
-    margin: 17px;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.center{
+    width: 30%;
+    margin: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.box img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+/* Clients section */
+#client-section {
+    background-color: #fffcf5;
+    padding: 50px 20px;
+}
+
+#clients {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.client-item {
+    margin: 10px;
+}
+
+.client-item img {
+    width: 100px;
+    height: auto;
+}
+
+/* Contact section */
+#contact {
+    background-color: #fdd;
+    padding: 50px 20px;
+}
+
+#contact-box {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Footer */
+footer {
+    background-color: #ff6f61;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+/* Utility classes */
+.center {
+    text-align: center;
+}
+
+/* Responsive */
+@media screen and (max-width: 1170px) {
+    #services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 80%;
+    }
+
+    #navbar {
+        flex-direction: column;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar ul li {
+        margin: 10px 0;
+    }
 }
